@@ -15,6 +15,7 @@ int main() {
   float PIB1, PIB2;
   float densidade_populacional1, densidade_populacional2;
   float PIB_per_capita1, PIB_per_capita2;
+  float superpoder1, superpoder2;
 
   //area de entrada de dados
   //leitura dos dados da primeira carto
@@ -74,6 +75,10 @@ int main() {
   densidade_populacional2 = (float)populacao2 / area2;
   PIB_per_capita2 = (PIB2 * 1000000000) / (float)populacao2;
   
+//superpoderes
+  superpoder1 = (float)populacao1 + (float)P_turistico1 + area1 + PIB1 + densidade_populacional1 + PIB_per_capita1;
+  superpoder2 = (float)populacao2 + (float)P_turistico2 + area2 + PIB2 + densidade_populacional2 + PIB_per_capita2;
+  
   // Área para exibição dos dados da cidade
     //carta 1
   printf("\nCarta 1:\n");
@@ -86,6 +91,7 @@ int main() {
   printf("PIB: %.2f bilhões de reais\n", PIB1);//PIB da cidade
   printf("densidade populacional: %.2f hab/km²\n", densidade_populacional1);
   printf("PIB per capita: %.2f reais\n", PIB_per_capita1);
+  printf("Superpoder: %.2f\n", superpoder1);
 
   printf("\n"); //linha em branco para separar as cartas
 
@@ -100,6 +106,18 @@ int main() {
   printf("PIB: %.2f bilhões de reais\n", PIB2);//PIB da cidade
   printf("Densidade Populacional: %.2f hab/km²\n", densidade_populacional2);  
   printf("PIB per capita: %.2f reais\n", PIB_per_capita2);
+  printf("Superpoder: %.2f\n", superpoder2);
+
+//comparações
+  printf("\nComparações:\n");
+  
+  printf("população: %s\n", (populacao1 > populacao2) ? "Carta 1 venceu" : "carta 2 venceu");
+  printf("Pontos turísticos: %s\n", (P_turistico1 > P_turistico2) ? "Carta 1 venceu" : "carta 2 venceu");
+  printf("Área: %s\n", (area1 > area2) ? "Carta 1 venceu" : "carta 2 venceu");
+  printf("PIB: %s\n", (PIB1 > PIB2) ? "Carta 1 venceu" : "carta 2 venceu");
+  printf("Densidade populacional: %s\n", (densidade_populacional1 < densidade_populacional2) ? "Carta 1 venceu" : "carta 2 venceu");
+  printf("PIB per capita: %s\n", (PIB_per_capita1 > PIB_per_capita2) ? "Carta 1 venceu" : "carta 2 venceu");
+  printf("Superpoder: %s\n", (superpoder1 > superpoder2) ? "Carta 1 venceu" : "carta 2 venceu");
 
 return 0;
 } 
